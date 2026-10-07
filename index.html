@@ -1,0 +1,335 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Ekdanta Pharma | Quality Medicines, Trusted Care</title>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:wght@600;700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+:root{--green:#0b5d4b;--green-d:#073f33;--mint:#e6f2ee;--saffron:#e8a33d;--ink:#16231f;--muted:#5b6b66;--line:#d9e4e0;--bg:#fbfcfb}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{font-family:Inter,system-ui,sans-serif;color:var(--ink);background:var(--bg);line-height:1.65}
+img{max-width:100%;display:block}
+a{color:inherit;text-decoration:none}
+h1,h2,h3{font-family:Fraunces,Georgia,serif;line-height:1.15;color:var(--green-d)}
+.wrap{max-width:1160px;margin:0 auto;padding:0 22px}
+section{padding:84px 0}
+
+.top{background:var(--green-d);color:#cfe5de;font-size:14px;padding:8px 0}
+.top .wrap{display:flex;justify-content:space-between;flex-wrap:wrap;gap:6px}
+header{position:sticky;top:0;background:rgba(255,255,255,.96);border-bottom:1px solid var(--line);z-index:20}
+nav{display:flex;align-items:center;justify-content:space-between;height:72px}
+.logo{display:flex;align-items:center;gap:10px;font-family:Fraunces,serif;font-size:24px;font-weight:700;color:var(--green-d)}
+.logo i{width:36px;height:36px;border-radius:50% 50% 50% 8px;background:var(--green);display:grid;place-items:center;color:#fff;font-style:normal;font-size:18px}
+nav ul{display:flex;gap:30px;list-style:none;font-weight:500;font-size:15px}
+nav ul a:hover{color:var(--green)}
+.btn{display:inline-block;padding:13px 26px;border-radius:8px;font-weight:600;font-size:15px;border:2px solid var(--green);background:var(--green);color:#fff;cursor:pointer;transition:.2s}
+.btn:hover{background:var(--green-d);border-color:var(--green-d)}
+.btn.alt{background:transparent;color:var(--green)}
+.btn.alt:hover{background:var(--mint)}
+.menu{display:none;background:none;border:0;font-size:28px;cursor:pointer;color:var(--green-d)}
+
+.hero{background:linear-gradient(120deg,var(--mint) 55%,#fff);padding:70px 0 0;overflow:hidden}
+.hero .wrap{display:grid;grid-template-columns:1.05fr 1fr;gap:40px;align-items:end}
+.hero h1{font-size:clamp(36px,5vw,58px);margin-bottom:20px}
+.hero p{font-size:18px;color:var(--muted);max-width:520px;margin-bottom:30px}
+.hero .cta{display:flex;gap:14px;flex-wrap:wrap;margin-bottom:56px}
+.hero img{border-radius:220px 220px 0 0;height:520px;width:100%;object-fit:cover}
+.certs{display:flex;gap:26px;flex-wrap:wrap;padding-bottom:40px;font-size:14px;font-weight:600;color:var(--green-d)}
+.certs span{display:flex;align-items:center;gap:8px}
+.certs span::before{content:"✓";display:grid;place-items:center;width:22px;height:22px;border-radius:50%;background:var(--saffron);color:#fff;font-size:13px}
+
+.stats{background:var(--green);color:#fff;padding:38px 0}
+.stats .wrap{display:grid;grid-template-columns:repeat(4,1fr);gap:20px;text-align:center}
+.stats b{display:block;font-family:Fraunces,serif;font-size:38px}
+.stats span{font-size:14px;opacity:.85}
+
+.head{max-width:640px;margin-bottom:46px}
+.head h2{font-size:clamp(28px,3.5vw,40px);margin-bottom:12px}
+.head p{color:var(--muted)}
+.about .wrap,.quality .wrap{display:grid;grid-template-columns:1fr 1fr;gap:56px;align-items:center}
+.about img{border-radius:16px;height:440px;width:100%;object-fit:cover}
+.about ul{list-style:none;margin:22px 0 28px}
+.about li{padding:10px 0 10px 32px;position:relative;border-bottom:1px solid var(--line)}
+.about li::before{content:"+";position:absolute;left:0;top:8px;color:var(--saffron);font-weight:700;font-size:22px}
+
+.products{background:#fff}
+.filters{display:flex;gap:10px;flex-wrap:wrap;margin-bottom:30px}
+.filters button{padding:9px 20px;border-radius:30px;border:1px solid var(--line);background:#fff;font:inherit;font-weight:600;font-size:14px;color:var(--green-d);cursor:pointer}
+.filters button:hover{border-color:var(--green)}
+.filters button.on{background:var(--green);border-color:var(--green);color:#fff}
+.grid{display:grid;grid-template-columns:repeat(4,1fr);gap:22px}
+.card{display:flex;flex-direction:column;border:1px solid var(--line);border-radius:12px;overflow:hidden;background:var(--bg);transition:.2s}
+.card:hover{border-color:var(--green);transform:translateY(-3px)}
+.card img{height:190px;width:100%;object-fit:cover;background:var(--mint)}
+.card>div{padding:18px;display:flex;flex-direction:column;flex:1}
+.card h3{font-size:19px;margin-bottom:6px}
+.tag{align-self:flex-start;margin-bottom:10px;font-size:12px;font-weight:600;background:var(--mint);color:var(--green);padding:3px 10px;border-radius:20px}
+.meta{font-size:13px;color:var(--muted);margin-bottom:2px}
+.meta b{color:var(--ink)}
+.card .btn{margin-top:auto;padding:9px 16px;font-size:14px;text-align:center}
+
+.quality img{border-radius:16px;height:400px;width:100%;object-fit:cover}
+.steps{display:grid;gap:14px;margin-top:22px}
+.steps div{border-left:4px solid var(--saffron);padding:4px 0 4px 16px}
+.steps b{display:block;color:var(--green-d)}
+.steps span{font-size:14px;color:var(--muted)}
+
+.contact{background:var(--green-d);color:#fff}
+.contact h2{color:#fff}
+.contact .wrap{display:grid;grid-template-columns:1fr 1.1fr;gap:56px}
+.contact .head p{color:#bcd6ce}
+.info{margin-top:26px;display:grid;gap:12px;font-size:15px}
+form{background:#fff;border-radius:14px;padding:30px;display:grid;gap:14px;color:var(--ink)}
+label{font-size:13px;font-weight:600;color:var(--green-d)}
+input,textarea,select{width:100%;padding:12px 14px;border:1px solid var(--line);border-radius:8px;font:inherit;margin-top:5px;background:var(--bg)}
+textarea{min-height:110px;resize:vertical}
+.row{display:grid;grid-template-columns:1fr 1fr;gap:14px}
+
+footer{background:#04271f;color:#8fb2a7;padding:26px 0;font-size:13px}
+footer .wrap{display:flex;justify-content:space-between;flex-wrap:wrap;gap:10px}
+
+@media(max-width:960px){
+  .hero .wrap,.about .wrap,.quality .wrap,.contact .wrap{grid-template-columns:1fr}
+  .grid{grid-template-columns:repeat(2,1fr)}
+  .stats .wrap{grid-template-columns:repeat(2,1fr)}
+  .hero img{height:340px}
+  .menu{display:block}
+  nav ul{display:none;position:absolute;top:72px;left:0;right:0;background:#fff;flex-direction:column;padding:20px 22px;gap:16px;border-bottom:1px solid var(--line)}
+  nav ul.open{display:flex}
+  nav>.btn{display:none}
+}
+@media(max-width:560px){.grid,.row{grid-template-columns:1fr}section{padding:60px 0}}
+</style>
+</head>
+<body>
+
+<div class="top"><div class="wrap">
+  <span>WHO-GMP aligned manufacturing | Serving hospitals &amp; distributors</span>
+  <span>Call: +91 00000 00000 &nbsp;|&nbsp; info@ekdantapharma.com</span>
+</div></div>
+
+<header><div class="wrap"><nav>
+  <a href="#home" class="logo"><i>✚</i>Ekdanta Pharma</a>
+  <ul id="menu">
+    <li><a href="#about">About</a></li>
+    <li><a href="#products">Products</a></li>
+    <li><a href="#quality">Quality</a></li>
+    <li><a href="#contact">Contact</a></li>
+  </ul>
+  <a href="#contact" class="btn">Request a quote</a>
+  <button class="menu" aria-label="Open menu" onclick="document.getElementById('menu').classList.toggle('open')">☰</button>
+</nav></div></header>
+
+<main>
+<section class="hero" id="home"><div class="wrap">
+  <div>
+    <h1>Medicines made with care, delivered with trust.</h1>
+    <p>Ekdanta Pharma develops and supplies quality-tested tablets, capsules, syrups and injectables for doctors, pharmacies and healthcare institutions.</p>
+    <div class="cta">
+      <a href="#products" class="btn">View our products</a>
+      <a href="#contact" class="btn alt">Become a distributor</a>
+    </div>
+    <div class="certs"><span>WHO-GMP aligned</span><span>ISO 9001</span><span>Batch-tested</span></div>
+  </div>
+  <img src="https://images.unsplash.com/photo-1587854692152-cbe660dbde88?auto=format&fit=crop&w=900&q=80" alt="Pharmacist holding medicine packs">
+</div></section>
+
+<div class="stats"><div class="wrap">
+  <div><b>15+</b><span>Years of experience</span></div>
+  <div><b>120+</b><span>Products in range</span></div>
+  <div><b>500+</b><span>Distribution partners</span></div>
+  <div><b>100%</b><span>Batches quality-tested</span></div>
+</div></div>
+
+<section class="about" id="about"><div class="wrap">
+  <img src="https://images.unsplash.com/photo-1631549916768-4119b2e5f926?auto=format&fit=crop&w=900&q=80" alt="Pharmaceutical laboratory">
+  <div>
+    <div class="head" style="margin-bottom:0">
+      <h2>A pharma partner you can depend on</h2>
+      <p>Ekdanta Pharma was built on one idea: every patient deserves medicine that works as promised. From raw material checks to final packaging, each step is documented and verified.</p>
+    </div>
+    <ul>
+      <li>Affordable, high-quality generic and branded formulations</li>
+      <li>Trained quality team and modern testing equipment</li>
+      <li>On-time delivery across India</li>
+      <li>Dedicated support for distributors and institutions</li>
+    </ul>
+    <a href="#contact" class="btn">Talk to our team</a>
+  </div>
+</div></section>
+
+<section class="products" id="products"><div class="wrap">
+  <div class="head">
+    <h2>Our products</h2>
+    <p>Browse by category. Tap Enquire on any product and we will reply with price and availability.</p>
+  </div>
+
+  <div class="filters" id="filters">
+    <button class="on" type="button">All</button>
+    <button type="button">Tablets</button>
+    <button type="button">Capsules</button>
+    <button type="button">Syrups</button>
+    <button type="button">Injectables</button>
+  </div>
+
+  <div class="grid" id="productGrid">
+
+    <article class="card" data-cat="Tablets">
+      <img src="https://images.unsplash.com/photo-1584308666744-24d5c474f2ae?auto=format&fit=crop&w=600&q=80" alt="Ekdaflam-P" loading="lazy">
+      <div>
+        <span class="tag">Tablets</span>
+        <h3>Ekdaflam-P</h3>
+        <p class="meta"><b>Composition:</b> Aceclofenac 100mg + Paracetamol 325mg</p>
+        <p class="meta" style="margin-bottom:14px"><b>Pack:</b> 10 x 10 tablets</p>
+        <a href="#contact" class="btn alt" data-p="Ekdaflam-P">Enquire</a>
+      </div>
+    </article>
+
+    <article class="card" data-cat="Tablets">
+      <img src="https://images.unsplash.com/photo-1550572017-edd951b55104?auto=format&fit=crop&w=600&q=80" alt="Ekdacef-500" loading="lazy">
+      <div>
+        <span class="tag">Tablets</span>
+        <h3>Ekdacef-500</h3>
+        <p class="meta"><b>Composition:</b> Cefixime 200mg</p>
+        <p class="meta" style="margin-bottom:14px"><b>Pack:</b> 10 x 10 tablets</p>
+        <a href="#contact" class="btn alt" data-p="Ekdacef-500">Enquire</a>
+      </div>
+    </article>
+
+    <article class="card" data-cat="Capsules">
+      <img src="https://images.unsplash.com/photo-1471864190281-a93a3070b6de?auto=format&fit=crop&w=600&q=80" alt="Ekdapan-D" loading="lazy">
+      <div>
+        <span class="tag">Capsules</span>
+        <h3>Ekdapan-D</h3>
+        <p class="meta"><b>Composition:</b> Pantoprazole 40mg + Domperidone 30mg SR</p>
+        <p class="meta" style="margin-bottom:14px"><b>Pack:</b> 10 x 10 capsules</p>
+        <a href="#contact" class="btn alt" data-p="Ekdapan-D">Enquire</a>
+      </div>
+    </article>
+
+    <article class="card" data-cat="Capsules">
+      <img src="https://images.unsplash.com/photo-1587854692152-cbe660dbde88?auto=format&fit=crop&w=600&q=80" alt="Ekdavit-Plus" loading="lazy">
+      <div>
+        <span class="tag">Capsules</span>
+        <h3>Ekdavit-Plus</h3>
+        <p class="meta"><b>Composition:</b> Multivitamin + Multimineral</p>
+        <p class="meta" style="margin-bottom:14px"><b>Pack:</b> 10 x 15 capsules</p>
+        <a href="#contact" class="btn alt" data-p="Ekdavit-Plus">Enquire</a>
+      </div>
+    </article>
+
+    <article class="card" data-cat="Syrups">
+      <img src="https://images.unsplash.com/photo-1631549916768-4119b2e5f926?auto=format&fit=crop&w=600&q=80" alt="Ekdacof" loading="lazy">
+      <div>
+        <span class="tag">Syrups</span>
+        <h3>Ekdacof</h3>
+        <p class="meta"><b>Composition:</b> Ambroxol + Guaifenesin + Terbutaline</p>
+        <p class="meta" style="margin-bottom:14px"><b>Pack:</b> 100 ml bottle</p>
+        <a href="#contact" class="btn alt" data-p="Ekdacof">Enquire</a>
+      </div>
+    </article>
+
+    <article class="card" data-cat="Syrups">
+      <img src="https://images.unsplash.com/photo-1579154204601-01588f351e67?auto=format&fit=crop&w=600&q=80" alt="Ekdadigest" loading="lazy">
+      <div>
+        <span class="tag">Syrups</span>
+        <h3>Ekdadigest</h3>
+        <p class="meta"><b>Composition:</b> Digestive enzymes with Simethicone</p>
+        <p class="meta" style="margin-bottom:14px"><b>Pack:</b> 200 ml bottle</p>
+        <a href="#contact" class="btn alt" data-p="Ekdadigest">Enquire</a>
+      </div>
+    </article>
+
+    <article class="card" data-cat="Injectables">
+      <img src="https://images.unsplash.com/photo-1583947215259-38e31be8751f?auto=format&fit=crop&w=600&q=80" alt="Ekdacef-Inj" loading="lazy">
+      <div>
+        <span class="tag">Injectables</span>
+        <h3>Ekdacef-Inj</h3>
+        <p class="meta"><b>Composition:</b> Ceftriaxone 1g</p>
+        <p class="meta" style="margin-bottom:14px"><b>Pack:</b> 1 vial + WFI</p>
+        <a href="#contact" class="btn alt" data-p="Ekdacef-Inj">Enquire</a>
+      </div>
+    </article>
+
+    <article class="card" data-cat="Injectables">
+      <img src="https://images.unsplash.com/photo-1583947215259-38e31be8751f?auto=format&fit=crop&w=600&q=80" alt="Ekdaneuro-Inj" loading="lazy">
+      <div>
+        <span class="tag">Injectables</span>
+        <h3>Ekdaneuro-Inj</h3>
+        <p class="meta"><b>Composition:</b> Methylcobalamin 1500mcg</p>
+        <p class="meta" style="margin-bottom:14px"><b>Pack:</b> 1 x 2 ml ampoule</p>
+        <a href="#contact" class="btn alt" data-p="Ekdaneuro-Inj">Enquire</a>
+      </div>
+    </article>
+
+  </div>
+</div></section>
+
+<section class="quality" id="quality"><div class="wrap">
+  <div>
+    <div class="head" style="margin-bottom:0">
+      <h2>Quality at every step</h2>
+      <p>Our process is designed so that nothing reaches a patient without being checked.</p>
+    </div>
+    <div class="steps">
+      <div><b>Raw material testing</b><span>Every ingredient is verified before production begins.</span></div>
+      <div><b>In-process control</b><span>Weight, hardness and dissolution checks during manufacturing.</span></div>
+      <div><b>Final batch release</b><span>Finished goods are approved only after full lab analysis.</span></div>
+      <div><b>Traceable packaging</b><span>Batch numbers and expiry dates on every pack.</span></div>
+    </div>
+  </div>
+  <img src="https://images.unsplash.com/photo-1579154204601-01588f351e67?auto=format&fit=crop&w=900&q=80" alt="Scientist testing samples" loading="lazy">
+</div></section>
+
+<section class="contact" id="contact"><div class="wrap">
+  <div>
+    <div class="head" style="margin-bottom:0">
+      <h2>Get in touch</h2>
+      <p>Looking for a distributor partnership, bulk supply or product details? Send us a message and we will reply within one working day.</p>
+    </div>
+    <div class="info">
+      <div><b>Address:</b> Your office address, City, State, PIN</div>
+      <div><b>Phone:</b> +91 00000 00000</div>
+      <div><b>Email:</b> info@ekdantapharma.com</div>
+      <div><b>Hours:</b> Mon to Sat, 9:30 AM to 6:00 PM</div>
+    </div>
+  </div>
+  <!-- Sign up free at formspree.io and replace YOUR_FORM_ID -->
+  <form action="https://formspree.io/f/YOUR_FORM_ID" method="POST">
+    <div class="row">
+      <div><label for="n">Name</label><input id="n" name="name" required></div>
+      <div><label for="p">Phone</label><input id="p" name="phone" type="tel" required></div>
+    </div>
+    <div><label for="e">Email</label><input id="e" name="email" type="email" required></div>
+    <div><label for="t">I am a</label>
+      <select id="t" name="type"><option>Distributor</option><option>Pharmacy / Chemist</option><option>Hospital / Clinic</option><option>Other</option></select>
+    </div>
+    <div><label for="m">Message</label><textarea id="m" name="message"></textarea></div>
+    <button class="btn" type="submit">Send message</button>
+  </form>
+</div></section>
+</main>
+
+<footer><div class="wrap">
+  <span>© 2026 Ekdanta Pharma. All rights reserved.</span>
+  <span>Drug Licence No: XXXXX &nbsp;|&nbsp; GST: XXXXXXXXXXXX</span>
+</div></footer>
+
+<script>
+const bar=document.getElementById('filters'),grid=document.getElementById('productGrid');
+bar.addEventListener('click',e=>{
+  const b=e.target.closest('button');if(!b)return;
+  bar.querySelectorAll('button').forEach(x=>x.classList.toggle('on',x===b));
+  grid.querySelectorAll('.card').forEach(c=>{
+    c.style.display=(b.textContent==='All'||c.dataset.cat===b.textContent)?'':'none';
+  });
+});
+grid.addEventListener('click',e=>{
+  const a=e.target.closest('[data-p]');
+  if(a)document.getElementById('m').value='I would like to enquire about '+a.dataset.p+'.';
+});
+</script>
+</body>
+</html>
